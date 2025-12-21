@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motion Calculator — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+input,button{padding:10px;margin:5px;}
+button{background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Motion Calculator</h2>
+<p>Calculate speed, distance, or time</p>
+<input id="u" type="number" placeholder="Initial velocity (m/s)">
+<input id="v" type="number" placeholder="Final velocity (m/s)">
+<input id="a" type="number" placeholder="Acceleration (m/s²)">
+<input id="t" type="number" placeholder="Time (s)">
+<input id="s" type="number" placeholder="Distance (m)">
+<button onclick="calc()">Calculate</button>
+<div id="res"></div>
+
+<script>
+function calc(){
+ let u=parseFloat(document.getElementById('u').value);
+ let v=parseFloat(document.getElementById('v').value);
+ let a=parseFloat(document.getElementById('a').value);
+ let t=parseFloat(document.getElementById('t').value);
+ let s=parseFloat(document.getElementById('s').value);
+ if(!isNaN(u)&&!isNaN(a)&&!isNaN(t)){document.getElementById('res').innerText='v = '+(u+a*t);}
+ else if(!isNaN(u)&&!isNaN(v)&&!isNaN(a)){document.getElementById('res').innerText='s = '+((v*v - u*u)/(2*a));}
+ else if(!isNaN(s)&&!isNaN(u)&&!isNaN(a)){document.getElementById('res').innerText='v = '+Math.sqrt(u*u+2*a*s);}
+ else{document.getElementById('res').innerText='Fill 3 fields to calculate 4th';}
+}
+</script>
+</body>
+</html>
