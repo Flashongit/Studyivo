@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gas Law Calculator — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+input,button{padding:10px;margin:5px;}
+button{background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Gas Law Calculator (PV=nRT)</h2>
+<input id="P" type="number" placeholder="Pressure (Pa)">
+<input id="V" type="number" placeholder="Volume (m³)">
+<input id="n" type="number" placeholder="Moles">
+<input id="R" type="number" placeholder="Gas Constant (8.314)">
+<input id="T" type="number" placeholder="Temperature (K)">
+<button onclick="calc()">Calculate</button>
+<div id="res"></div>
+
+<script>
+function calc(){
+ let P=parseFloat(document.getElementById('P').value);
+ let V=parseFloat(document.getElementById('V').value);
+ let n=parseFloat(document.getElementById('n').value);
+ let R=parseFloat(document.getElementById('R').value);
+ let T=parseFloat(document.getElementById('T').value);
+ if(isNaN(P)||isNaN(V)||isNaN(n)||isNaN(R)||isNaN(T)){document.getElementById('res').innerText='Enter valid numbers'; return;}
+ if(!P){document.getElementById('res').innerText='Pressure = '+(n*R*T/V).toFixed(2)+' Pa';}
+ else if(!V){document.getElementById('res').innerText='Volume = '+(n*R*T/P).toFixed(2)+' m³';}
+ else{document.getElementById('res').innerText='Use 0 for unknown field';}
+}
+</script>
+</body>
+</html>
