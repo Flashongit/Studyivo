@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Factorization Tool — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+input,button{padding:10px;margin:5px;font-size:16px;}
+button{background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Factorization Tool</h2>
+<input id="num" type="number" placeholder="Enter number">
+<button onclick="factor()">Find Factors</button>
+<div id="res"></div>
+
+<script>
+function factor(){
+ let n=parseInt(document.getElementById('num').value),f=[];
+ if(isNaN(n)||n<=0){document.getElementById('res').innerText='Enter valid number';return;}
+ for(let i=1;i<=n;i++){if(n%i===0) f.push(i);}
+ document.getElementById('res').innerText='Factors: '+f.join(', ');
+}
+</script>
+</body>
+</html>
