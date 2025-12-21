@@ -105,6 +105,33 @@
       font-size: 13px;
       color: #38bdf8;
     }
+ /* Navbar upgrade */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #020617;
+  padding: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+nav a {
+  color: #38bdf8;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  }
+    .card-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 30px 20px;
+  justify-items: center;
+        }
   </style>
 </head>
 
@@ -127,19 +154,29 @@
     </p>
   </section>
 
-  <section class="sections">
-    <div class="card">
-      <h3>📚 Study</h3>
-      <p>Maths, Science, English & more — tools made to help students.</p>
-      <a href="study.html">Go to Study</a>
-    </div>
+ <div class="card-container">
 
-    <div class="card">
-      <h3>🎮 Gaming</h3>
-      <p>Myths, facts, tips and skill-improvement tools for gamers.</p>
-      <a href="gaming.html">Go to Gaming</a>
-    </div>
-  </section>
+  <a class="card" href="maths.html">
+    <h3>📐 Maths</h3>
+    <p>Calculators, formulas & tools</p>
+  </a>
+
+  <a class="card" href="science.html">
+    <h3>🔬 Science</h3>
+    <p>Physics, Chemistry & Biology</p>
+  </a>
+
+  <a class="card" href="study.html">
+    <h3>📚 Study</h3>
+    <p>All academic tools in one place</p>
+  </a>
+
+  <a class="card" href="gaming.html">
+    <h3>🎮 Gaming</h3>
+    <p>Myths, facts & skill improvement</p>
+  </a>
+
+ </div>
 
   <footer>
     <div>© 2025 Studyivo</div>
