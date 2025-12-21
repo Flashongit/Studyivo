@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concentration Calculator — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+input,button{padding:10px;margin:5px;}
+button{background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Solution Concentration Calculator</h2>
+<input id="solute" type="number" placeholder="Solute (g)">
+<input id="solvent" type="number" placeholder="Solvent (L)">
+<button onclick="calc()">Calculate</button>
+<div id="res"></div>
+
+<script>
+function calc(){
+ let s=parseFloat(document.getElementById('solute').value);
+ let v=parseFloat(document.getElementById('solvent').value);
+ if(isNaN(s)||isNaN(v)||v===0){document.getElementById('res').innerText='Enter valid values'; return;}
+ document.getElementById('res').innerText='Concentration = '+(s/v).toFixed(2)+' g/L';
+}
+</script>
+</body>
+</html>
