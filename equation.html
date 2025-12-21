@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equation Solver — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+input,button{padding:10px;margin:5px;font-size:16px;}
+button{background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Equation Solver</h2>
+<p>Enter linear equation like 2*x+3=7:</p>
+<input id="eq" placeholder="e.g., 2*x+3=7">
+<button onclick="solveEq()">Solve</button>
+<div id="res"></div>
+
+<script>
+function solveEq(){
+ let eq=document.getElementById('eq').value;
+ try{
+  let sides=eq.split('=');
+  let x=(eval(sides[1]+'-('+sides[0].replace(/x/g,'1*0')+')'));
+  document.getElementById('res').innerText='Solution: x='+x;
+ }catch{document.getElementById('res').innerText='Error in equation';}
+}
+</script>
+</body>
+</html>
