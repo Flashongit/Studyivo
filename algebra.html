@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Algebra Solver — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+input,button{padding:10px;margin:5px;}
+button{background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Algebra Solver</h2>
+<input type="text" id="expr" placeholder="Enter expression e.g., 2x+3=7">
+<button onclick="solve()">Solve</button>
+<div id="res"></div>
+
+<script>
+function solve(){
+ let eq=document.getElementById('expr').value;
+ try{
+  let sides=eq.split('=');
+  let x=(eval(sides[1]+'-('+sides[0].replace(/x/g,'1*0')+')'));
+  document.getElementById('res').innerText='x='+x;
+ }catch{document.getElementById('res').innerText='Error';}
+}
+</script>
+</body>
+</html>
