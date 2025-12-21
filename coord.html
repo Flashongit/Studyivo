@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coordinate Geometry — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+input,button{padding:10px;margin:5px;}
+button{background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Coordinate Geometry</h2>
+<p>Find Distance, Midpoint, Slope</p>
+<input type="number" id="x1" placeholder="x1">
+<input type="number" id="y1" placeholder="y1">
+<input type="number" id="x2" placeholder="x2">
+<input type="number" id="y2" placeholder="y2">
+<button onclick="calc()">Calculate</button>
+<div id="res"></div>
+
+<script>
+function calc(){
+ let x1=parseFloat(document.getElementById('x1').value);
+ let y1=parseFloat(document.getElementById('y1').value);
+ let x2=parseFloat(document.getElementById('x2').value);
+ let y2=parseFloat(document.getElementById('y2').value);
+ if([x1,y1,x2,y2].some(v=>isNaN(v))){document.getElementById('res').innerText='Enter numbers'; return;}
+ let dist=Math.sqrt((x2-x1)**2+(y2-y1)**2);
+ let midX=(x1+x2)/2,midY=(y1+y2)/2;
+ let slope=(x2-x1)===0?'Infinity':(y2-y1)/(x2-x1);
+ document.getElementById('res').innerText=`Distance: ${dist.toFixed(2)}\nMidpoint: (${midX.toFixed(2)},${midY.toFixed(2)})\nSlope: ${slope}`;
+}
+</script>
+</body>
+</html>
