@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Density / Pressure / Force — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+input,select,button{padding:10px;margin:5px;}
+button{background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Density / Pressure / Force Calculator</h2>
+<select id="tool">
+<option value="density">Density</option>
+<option value="pressure">Pressure</option>
+<option value="force">Force</option>
+</select><br>
+<input id="mass" type="number" placeholder="Mass (kg)">
+<input id="volume" type="number" placeholder="Volume (m³) / Area (m²)">
+<input id="acc" type="number" placeholder="Acceleration (m/s²) for Force">
+<button onclick="calc()">Calculate</button>
+<div id="res"></div>
+
+<script>
+function calc(){
+ let tool=document.getElementById('tool').value;
+ let m=parseFloat(document.getElementById('mass').value);
+ let v=parseFloat(document.getElementById('volume').value);
+ let a=parseFloat(document.getElementById('acc').value);
+ if(isNaN(m)||isNaN(v)){document.getElementById('res').innerText='Enter valid values'; return;}
+ if(tool==='density'){document.getElementById('res').innerText='Density = '+(m/v).toFixed(2)+' kg/m³';}
+ else if(tool==='pressure'){document.getElementById('res').innerText='Pressure = '+(m/v).toFixed(2)+' Pa';}
+ else if(tool==='force'){if(isNaN(a)){document.getElementById('res').innerText='Enter acceleration for Force'; return;}
+ document.getElementById('res').innerText='Force = '+(m*a).toFixed(2)+' N';}
+}
+</script>
+</body>
+</html>
