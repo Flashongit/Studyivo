@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Percentage Calculator — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+input,button{padding:10px;margin:5px;font-size:16px;}
+button{background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Percentage Calculator</h2>
+<input id="value" type="number" placeholder="Value">
+<input id="total" type="number" placeholder="Total">
+<button onclick="calcPercent()">Calculate</button>
+<div id="res"></div>
+<script>
+function calcPercent(){
+ let val=parseFloat(document.getElementById('value').value);
+ let total=parseFloat(document.getElementById('total').value);
+ if(isNaN(val)||isNaN(total)) {document.getElementById('res').innerText='Enter valid numbers';return;}
+ let percent=(val/total)*100;
+ document.getElementById('res').innerText='Result: '+percent.toFixed(2)+'%';
+}
+</script>
+</body>
+</html>
