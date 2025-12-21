@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>English Tools | Studyivo</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+
+    header {
+      background: #020617;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #38bdf8;
+      font-size: 22px;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    h2 {
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    .tool {
+      background: #020617;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+
+    textarea, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: none;
+      font-size: 14px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #38bdf8;
+      color: #020617;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0ea5e9;
+    }
+
+    .result {
+      margin-top: 10px;
+      color: #cbd5f5;
+    }
+
+    footer {
+      background: #020617;
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+      color: #94a3b8;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Studyivo</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="study.html">Study</a>
+    <a href="gaming.html">Gaming</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>📘 English Tools</h2>
+  <p>Simple tools to improve writing, grammar and vocabulary.</p>
+
+  <!-- TOOL 1: WORD COUNTER -->
+  <div class="tool">
+    <h3>1️⃣ Word Counter</h3>
+    <textarea id="wordInput" rows="5" placeholder="Type or paste your text here..."></textarea>
+    <button onclick="countWords()">Count Words</button>
+    <div class="result" id="wordResult"></div>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 Studyivo
+</footer>
+
+<script>
+  function countWords() {
+    let text = document.getElementById("wordInput").value.trim();
+    if (text === "") {
+      document.getElementById("wordResult").innerText = "Words: 0";
+      return;
+    }
+    let words = text.split(/\s+/).length;
+    document.getElementById("wordResult").innerText = "Words: " + words;
+  }
+</script>
+
+</body>
+</html>
