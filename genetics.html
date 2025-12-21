@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genetics Calculator — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+input,button{padding:10px;margin:5px;}
+button{background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Genetics Calculator (Punnett Square)</h2>
+<input id="parent1" placeholder="Parent 1 allele e.g., Aa">
+<input id="parent2" placeholder="Parent 2 allele e.g., Aa">
+<button onclick="calc()">Calculate</button>
+<div id="res"></div>
+
+<script>
+function calc(){
+ let p1=document.getElementById('parent1').value.toUpperCase();
+ let p2=document.getElementById('parent2').value.toUpperCase();
+ if(p1.length!==2 || p2.length!==2){document.getElementById('res').innerText='Enter 2 alleles each'; return;}
+ let combos=[];
+ for(let a of p1){for(let b of p2){combos.push(a+b);}}
+ let count={};
+ combos.forEach(c=>count[c]=(count[c]||0)+1);
+ let res='';
+ for(let k in count){res+=k+': '+count[k]+'\n';}
+ document.getElementById('res').innerText=res;
+}
+</script>
+</body>
+</html>
