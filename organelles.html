@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organelles Info — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+select,button{padding:10px;margin:5px;}
+button{background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Organelles Info Tool</h2>
+<select id="organelle">
+<option value="nucleus">Nucleus</option>
+<option value="mitochondria">Mitochondria</option>
+<option value="ribosome">Ribosome</option>
+<option value="chloroplast">Chloroplast</option>
+<option value="cell_membrane">Cell Membrane</option>
+</select>
+<button onclick="showInfo()">Show Info</button>
+<div id="res"></div>
+
+<script>
+function showInfo(){
+ let org=document.getElementById('organelle').value;
+ let info={
+  nucleus:"Control center of the cell, contains DNA.",
+  mitochondria:"Powerhouse of the cell, produces energy.",
+  ribosome:"Site of protein synthesis.",
+  chloroplast:"Photosynthesis occurs here (plant cells).",
+  cell_membrane:"Protective barrier, controls movement in/out."
+ };
+ document.getElementById('res').innerText=info[org];
+}
+</script>
+</body>
+</html>
