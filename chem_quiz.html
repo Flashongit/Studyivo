@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chemistry Quiz — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+button{padding:10px;margin:5px;background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Chemistry Quiz</h2>
+<button onclick="quiz()">Generate Question</button>
+<div id="res"></div>
+
+<script>
+let q=["H2O formula?","Atomic number of H?","NaCl is?"];
+let a=["Water","1","Salt"];
+function quiz(){let idx=Math.floor(Math.random()*q.length);document.getElementById('res').innerText=q[idx]+"\nAnswer: "+a[idx];}
+</script>
+</body>
+</html>
