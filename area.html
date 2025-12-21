@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Area & Perimeter — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+input,select,button{padding:10px;margin:5px;}
+button{background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Area & Perimeter</h2>
+<select id="shape" onchange="reset()">
+<option value="">Select shape</option>
+<option value="square">Square</option>
+<option value="rectangle">Rectangle</option>
+<option value="triangle">Triangle</option>
+<option value="circle">Circle</option>
+</select>
+<div id="inputs"></div>
+<button onclick="calc()">Calculate</button>
+<div id="res"></div>
+
+<script>
+function reset(){document.getElementById('inputs').innerHTML='';document.getElementById('res').innerText=''; 
+ let s=document.getElementById('shape').value;
+ if(s==='square'){document.getElementById('inputs').innerHTML='Side: <input id="a" type="number">';}
+ if(s==='rectangle'){document.getElementById('inputs').innerHTML='Length: <input id="l" type="number"> Width: <input id="w" type="number">';}
+ if(s==='triangle'){document.getElementById('inputs').innerHTML='Base: <input id="b" type="number"> Height: <input id="h" type="number">';}
+ if(s==='circle'){document.getElementById('inputs').innerHTML='Radius: <input id="r" type="number">';}
+}
+function calc(){
+ let s=document.getElementById('shape').value,res='';
+ if(s==='square'){let a=parseFloat(document.getElementById('a').value);res='Area: '+a*a+', Perimeter: '+4*a;}
+ if(s==='rectangle'){let l=parseFloat(document.getElementById('l').value),w=parseFloat(document.getElementById('w').value);res='Area: '+(l*w)+', Perimeter: '+2*(l+w);}
+ if(s==='triangle'){let b=parseFloat(document.getElementById('b').value),h=parseFloat(document.getElementById('h').value);res='Area: '+(0.5*b*h);}
+ if(s==='circle'){let r=parseFloat(document.getElementById('r').value);res='Area: '+(3.1416*r*r)+', Circumference: '+(2*3.1416*r);}
+ document.getElementById('res').innerText=res;
+}
+</script>
+</body>
+</html>
