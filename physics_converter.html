@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physics Unit Converter — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+input,select,button{padding:10px;margin:5px;}
+button{background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Physics Unit Converter</h2>
+<input type="number" id="value" placeholder="Enter value">
+<select id="from">
+<option value="m">Meters</option>
+<option value="km">Kilometers</option>
+<option value="cm">Centimeters</option>
+<option value="g">Grams</option>
+<option value="kg">Kilograms</option>
+<option value="c">Celsius</option>
+<option value="k">Kelvin</option>
+</select>
+<select id="to">
+<option value="m">Meters</option>
+<option value="km">Kilometers</option>
+<option value="cm">Centimeters</option>
+<option value="g">Grams</option>
+<option value="kg">Kilograms</option>
+<option value="c">Celsius</option>
+<option value="k">Kelvin</option>
+</select>
+<button onclick="convert()">Convert</button>
+<div id="res"></div>
+
+<script>
+function convert(){
+ let val=parseFloat(document.getElementById('value').value);
+ let from=document.getElementById('from').value;
+ let to=document.getElementById('to').value;
+ if(isNaN(val)){document.getElementById('res').innerText='Enter valid value'; return;}
+ let meters=val;
+ if(from==='km') meters=val*1000;
+ if(from==='cm') meters=val/100;
+ if(from==='kg') meters=val*1000;
+ if(from==='g') meters=val/1000;
+ if(from==='k') meters=val-273;
+ if(from==='c') meters=val;
+ let res=meters;
+ if(to==='km') res=meters/1000;
+ if(to==='cm') res=meters*100;
+ if(to==='kg') res=meters/1000;
+ if(to==='g') res=meters*1000;
+ if(to==='k') res=meters+273;
+ if(to==='c') res=meters;
+ document.getElementById('res').innerText='Result: '+res+' '+to;
+}
+</script>
+</body>
+</html>
