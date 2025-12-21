@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mole Calculator — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+input,button{padding:10px;margin:5px;}
+button{background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Mole Calculator</h2>
+<input id="grams" type="number" placeholder="Grams">
+<input id="molar" type="number" placeholder="Molar Mass (g/mol)">
+<button onclick="calc()">Calculate</button>
+<div id="res"></div>
+
+<script>
+function calc(){
+ let g=parseFloat(document.getElementById('grams').value);
+ let m=parseFloat(document.getElementById('molar').value);
+ if(isNaN(g)||isNaN(m)||m===0){document.getElementById('res').innerText='Enter valid values'; return;}
+ document.getElementById('res').innerText='Moles = '+(g/m).toFixed(3);
+}
+</script>
+</body>
+</html>
