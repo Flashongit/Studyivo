@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator — Studyivo</title>
+<style>
+  body {font-family: Arial; background:#0f172a; color:#e5e7eb; padding:20px;}
+  input {padding:10px; margin:5px; font-size:18px;}
+  button {padding:10px 15px; margin:5px; font-size:16px; background:#38bdf8; color:#020617; border:none; border-radius:5px;}
+  #result {margin-top:15px; font-size:20px;}
+</style>
+</head>
+<body>
+<h2>Calculator</h2>
+<input type="text" id="display" placeholder="0" readonly>
+<br>
+<button onclick="appendNum('1')">1</button>
+<button onclick="appendNum('2')">2</button>
+<button onclick="appendNum('3')">3</button>
+<button onclick="appendNum('+')">+</button>
+<br>
+<button onclick="appendNum('4')">4</button>
+<button onclick="appendNum('5')">5</button>
+<button onclick="appendNum('6')">6</button>
+<button onclick="appendNum('-')">-</button>
+<br>
+<button onclick="appendNum('7')">7</button>
+<button onclick="appendNum('8')">8</button>
+<button onclick="appendNum('9')">9</button>
+<button onclick="appendNum('*')">*</button>
+<br>
+<button onclick="appendNum('0')">0</button>
+<button onclick="appendNum('.')">.</button>
+<button onclick="calculate()">=</button>
+<button onclick="appendNum('/')">/</button>
+<br>
+<button onclick="clearDisplay()">Clear</button>
+
+<div id="result"></div>
+
+<script>
+  let display = document.getElementById('display');
+  function appendNum(num){ display.value += num; }
+  function clearDisplay(){ display.value = ''; document.getElementById('result').innerText=''; }
+  function calculate(){
+    try{
+      let res = eval(display.value);
+      document.getElementById('result').innerText = 'Result: '+res;
+    }catch{ document.getElementById('result').innerText = 'Error'; }
+  }
+</script>
+</body>
+</html>
