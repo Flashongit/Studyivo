@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trigonometry Helper — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+input,select,button{padding:10px;margin:5px;}
+button{background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Trigonometry Helper</h2>
+<input type="number" id="angle" placeholder="Enter angle in degrees">
+<select id="func">
+<option value="sin">sin</option>
+<option value="cos">cos</option>
+<option value="tan">tan</option>
+</select>
+<button onclick="calc()">Calculate</button>
+<div id="res"></div>
+
+<script>
+function calc(){
+ let a=parseFloat(document.getElementById('angle').value);
+ let f=document.getElementById('func').value;
+ if(isNaN(a)){document.getElementById('res').innerText='Enter valid angle';return;}
+ let rad=a*Math.PI/180;
+ let val=Math[f](rad);
+ document.getElementById('res').innerText=f+'('+a+') = '+val.toFixed(4);
+}
+</script>
+</body>
+</html>
