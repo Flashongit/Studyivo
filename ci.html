@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compound Interest — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+input,button{padding:10px;margin:5px;}
+button{background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Compound Interest Calculator</h2>
+<input type="number" id="p" placeholder="Principal">
+<input type="number" id="r" placeholder="Rate (%)">
+<input type="number" id="t" placeholder="Time (years)">
+<input type="number" id="n" placeholder="Compounds/year">
+<button onclick="calc()">Calculate</button>
+<div id="res"></div>
+
+<script>
+function calc(){
+ let p=parseFloat(document.getElementById('p').value);
+ let r=parseFloat(document.getElementById('r').value)/100;
+ let t=parseFloat(document.getElementById('t').value);
+ let n=parseFloat(document.getElementById('n').value);
+ if(isNaN(p)||isNaN(r)||isNaN(t)||isNaN(n)||n<=0){document.getElementById('res').innerText='Enter valid numbers'; return;}
+ let ci=p*Math.pow(1+r/n,n*t);
+ document.getElementById('res').innerText='Compound Interest: '+ci.toFixed(2);
+}
+</script>
+</body>
+</html>
