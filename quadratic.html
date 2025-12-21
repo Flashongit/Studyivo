@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quadratic Solver — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+input,button{padding:10px;margin:5px;}
+button{background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Quadratic Solver</h2>
+<p>ax²+bx+c=0</p>
+<input id="a" type="number" placeholder="a">
+<input id="b" type="number" placeholder="b">
+<input id="c" type="number" placeholder="c">
+<button onclick="solve()">Solve</button>
+<div id="res"></div>
+
+<script>
+function solve(){
+ let a=parseFloat(document.getElementById('a').value);
+ let b=parseFloat(document.getElementById('b').value);
+ let c=parseFloat(document.getElementById('c').value);
+ if(isNaN(a)||isNaN(b)||isNaN(c)||a===0){document.getElementById('res').innerText='Enter valid numbers'; return;}
+ let d=b*b-4*a*c;
+ if(d<0){document.getElementById('res').innerText='No real roots'; return;}
+ let r1=(-b+Math.sqrt(d))/(2*a);
+ let r2=(-b-Math.sqrt(d))/(2*a);
+ document.getElementById('res').innerText='Roots: '+r1+', '+r2;
+}
+</script>
+</body>
+</html>
