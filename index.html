@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Studyivo — Study & Gaming Tools</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+
+    header {
+      background: #020617;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+      color: #38bdf8;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #cbd5f5;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .sections {
+      display: flex;
+      gap: 20px;
+      padding: 30px 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #020617;
+      padding: 20px;
+      width: 260px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #38bdf8;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #cbd5f5;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #38bdf8;
+      color: #020617;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #020617;
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+
+    .counter {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #38bdf8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Studyivo</h1>
+    <nav>
+      <a href="#">Study</a>
+      <a href="#">Gaming</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Study & Gaming Tools — All in One Place</h2>
+    <p>
+      Studyivo helps students learn better and gamers improve skills using simple,
+      fast and useful tools — completely free.
+    </p>
+  </section>
+
+  <section class="sections">
+    <div class="card">
+      <h3>📚 Study</h3>
+      <p>Maths, Science, English & more — tools made to help students.</p>
+      <a href="#">Go to Study</a>
+    </div>
+
+    <div class="card">
+      <h3>🎮 Gaming</h3>
+      <p>Myths, facts, tips and skill-improvement tools for gamers.</p>
+      <a href="#">Go to Gaming</a>
+    </div>
+  </section>
+
+  <footer>
+    <div>© 2025 Studyivo</div>
+    <div class="counter">
+      Visits: <span id="visitCount">0</span>
+    </div>
+  </footer>
+
+  <!-- SIMPLE TRAFFIC COUNTER -->
+  <script>
+    let count = localStorage.getItem("studyivo_visits");
+    if (!count) {
+      count = 0;
+    }
+    count++;
+    localStorage.setItem("studyivo_visits", count);
+    document.getElementById("visitCount").innerText = count;
+  </script>
+
+</body>
+  </html>
