@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matrix Calculator — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+textarea{width:90%;height:100px;margin:5px;}
+button{padding:10px 15px;margin:5px;background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Matrix Calculator (Addition)</h2>
+<p>Enter 2 matrices separated by comma, rows by ;</p>
+<textarea id="m1" placeholder="1,2;3,4"></textarea>
+<textarea id="m2" placeholder="5,6;7,8"></textarea><br>
+<button onclick="addMatrix()">Add</button>
+<div id="res"></div>
+
+<script>
+function addMatrix(){
+ let m1=document.getElementById('m1').value.split(';').map(r=>r.split(',').map(Number));
+ let m2=document.getElementById('m2').value.split(';').map(r=>r.split(',').map(Number));
+ if(m1.length!==m2.length){document.getElementById('res').innerText='Rows mismatch'; return;}
+ let res=[];
+ for(let i=0;i<m1.length;i++){
+  res[i]=[];
+  for(let j=0;j<m1[i].length;j++){res[i][j]=m1[i][j]+m2[i][j];}
+ }
+ document.getElementById('res').innerText='Result:\n'+res.map(r=>r.join(' ')).join('\n');
+}
+</script>
+</body>
+</html>
