@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work / Power / Energy — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+input,select,button{padding:10px;margin:5px;}
+button{background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Work / Power / Energy Calculator</h2>
+<select id="tool">
+<option value="work">Work</option>
+<option value="power">Power</option>
+<option value="kinetic">Kinetic Energy</option>
+<option value="potential">Potential Energy</option>
+</select><br>
+<input id="m" type="number" placeholder="Mass (kg)">
+<input id="v" type="number" placeholder="Velocity (m/s) / Height (m) for PE">
+<input id="h" type="number" placeholder="Height (m) / Time (s) for Power">
+<button onclick="calc()">Calculate</button>
+<div id="res"></div>
+
+<script>
+function calc(){
+ let t=document.getElementById('tool').value;
+ let m=parseFloat(document.getElementById('m').value);
+ let v=parseFloat(document.getElementById('v').value);
+ let h=parseFloat(document.getElementById('h').value);
+ if(isNaN(m)||isNaN(v)){document.getElementById('res').innerText='Enter valid values'; return;}
+ if(t==='work'){document.getElementById('res').innerText='Work = '+(m*v).toFixed(2)+' J';}
+ else if(t==='power'){if(isNaN(h)){document.getElementById('res').innerText='Enter time for Power';return;}
+ document.getElementById('res').innerText='Power = '+(m*v/h).toFixed(2)+' W';}
+ else if(t==='kinetic'){document.getElementById('res').innerText='Kinetic Energy = '+(0.5*m*v*v).toFixed(2)+' J';}
+ else if(t==='potential'){document.getElementById('res').innerText='Potential Energy = '+(m*9.8*v).toFixed(2)+' J';}
+}
+</script>
+</body>
+</html>
