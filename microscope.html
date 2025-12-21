@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microscope Magnification — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+input,button{padding:10px;margin:5px;}
+button{background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Microscope Magnification Calculator</h2>
+<input id="eyepiece" type="number" placeholder="Eyepiece magnification">
+<input id="objective" type="number" placeholder="Objective magnification">
+<button onclick="calc()">Calculate</button>
+<div id="res"></div>
+
+<script>
+function calc(){
+ let e=parseFloat(document.getElementById('eyepiece').value);
+ let o=parseFloat(document.getElementById('objective').value);
+ if(isNaN(e)||isNaN(o)){document.getElementById('res').innerText='Enter valid values'; return;}
+ document.getElementById('res').innerText='Total Magnification = '+(e*o);
+}
+</script>
+</body>
+</html>
