@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experiment Idea Generator — Studyivo</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:#e5e7eb;padding:20px;}
+button{padding:10px;margin:5px;background:#38bdf8;color:#020617;border:none;border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Science Experiment Idea Generator</h2>
+<button onclick="gen()">Generate Idea</button>
+<div id="res"></div>
+
+<script>
+let ideas=["Make a volcano eruption","Grow crystals","Test plant photosynthesis","Density experiment with liquids"];
+function gen(){document.getElementById('res').innerText=ideas[Math.floor(Math.random()*ideas.length)];}
+</script>
+</body>
+</html>
