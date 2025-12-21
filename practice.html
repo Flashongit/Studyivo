@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice Problems — Studyivo</title>
+<style>
+  body {font-family: Arial; background:#0f172a; color:#e5e7eb; padding:20px;}
+  h2{color:#38bdf8;}
+  button{padding:10px 15px; margin:5px; background:#38bdf8; color:#020617; border:none; border-radius:5px;}
+</style>
+</head>
+<body>
+<h2>Practice Problems</h2>
+<p>Click "New Problem" to generate:</p>
+<div id="problem"></div>
+<button onclick="generateProblem()">New Problem</button>
+
+<script>
+function generateProblem(){
+  let a=Math.floor(Math.random()*20)+1;
+  let b=Math.floor(Math.random()*20)+1;
+  let op=['+','-','*','/'][Math.floor(Math.random()*4)];
+  let prob=`${a} ${op} ${b}`;
+  document.getElementById('problem').innerText = prob;
+}
+</script>
+</body>
+</html>
