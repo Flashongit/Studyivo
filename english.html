@@ -134,11 +134,6 @@
 
 <script>
   function countWords() {
-    function countChars() {
-    let text = document.getElementById("charInput").value;
-    document.getElementById("charResult").innerText =
-      "Characters (with spaces): " + text.length;
-  }
     let text = document.getElementById("wordInput").value.trim();
     if (text === "") {
       document.getElementById("wordResult").innerText = "Words: 0";
@@ -146,6 +141,12 @@
     }
     let words = text.split(/\s+/).length;
     document.getElementById("wordResult").innerText = "Words: " + words;
+  }
+
+  function countChars() {
+    let text = document.getElementById("charInput").value;
+    document.getElementById("charResult").innerText =
+      "Characters (with spaces): " + text.length;
   }
 </script>
 
